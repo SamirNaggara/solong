@@ -6,15 +6,15 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:03:03 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/07 12:10:02 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:45:07 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../solong.h"
+#include "../../solong.h"
 
 int	ft_add_vertical(t_canva *canva)
 {
-	t_point *browse;
+	t_point	*browse;
 	t_point	*down;
 
 	browse = canva->map_first;
@@ -48,7 +48,6 @@ t_point	*ft_found_down(t_point *point)
 	}
 	return (NULL);
 }
-
 
 int	ft_add_horizontal(t_canva *canva)
 {

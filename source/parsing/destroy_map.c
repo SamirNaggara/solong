@@ -6,16 +6,16 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:04:08 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/07 10:00:35 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 20:26:07 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../solong.h"
+#include "../../solong.h"
 
-int		ft_destroy_map(t_canva *canva)
+int	ft_destroy_map(t_canva *canva)
 {
 	t_point	*browse;
-	t_point *tmp;
+	t_point	*tmp;
 
 	if (!canva->map_first)
 		return (0);
@@ -28,6 +28,7 @@ int		ft_destroy_map(t_canva *canva)
 	}
 	canva->map_first = NULL;
 	canva->map_end = NULL;
-	free(canva->map_items);
+	//free(canva->map_items);
+	free(canva->mlx);
 	return (0);
 }

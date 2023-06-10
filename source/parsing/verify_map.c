@@ -6,11 +6,11 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:04:58 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/07 10:45:48 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:52:16 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../solong.h"
+#include "../../solong.h"
 
 int	ft_verify_map(t_canva *canva)
 {
@@ -26,22 +26,22 @@ int	ft_verify_map(t_canva *canva)
 		return (0);
 	if (!ft_verify_map_close(canva))
 		return (0);
-	if (!ft_valid_way(canva, canva->map_start, canva->map_exit))
+	if (!ft_valid_way(canva, canva->map_player, canva->map_exit))
 		return (0);
 	if (!ft_valid_items_way(canva))
 		return (0);
 	return (1);
 }
-
 /*
 	On verifie que chaque ligne a la bonne longueur
 	En regardant le dernier element a droite
 	Et en vérifiant qu'il a bien le y normal
 	Egal à la longueur de ligne - 1
 */
+
 int	ft_verify_line_len(t_canva *canva)
 {
-	t_point *browse;
+	t_point	*browse;
 
 	browse = canva->map_first;
 	while (browse)
@@ -58,3 +58,52 @@ int	ft_verify_line_len(t_canva *canva)
 	return (1);
 }
 
+/*
+	On dois avoir au moins 1 item
+*/
+
+int	ft_verify_items(t_canva *canva)
+{
+	t_point	*browse;
+	int		nb_items;
+
+	nb_items = 0;
+	browse = canva->map_first;
+	while (browse)
+	{
+		if (browse->type == 'C')
+			nb_items++;
+		browse = browse->next;
+	}
+	if (!nb_items)
+	{
+		printf(E_ITEMS);
+		return (0);
+	}
+	canva->nb_items = nb_items;
+	if (!ft_register_map_items(canva, nb_items))
+		return (0);
+	return (1);
+}
+
+int	ft_register_map_items(t_canva *canva, int nb_items)
+{
+	t_point	*browse;
+	int		i;
+
+	browse = canva->map_first;
+	canva->map_items = (t_point **)malloc(sizeof(t_point *) * (nb_items));
+	if (!canva->map_items)
+		return (0);
+	i = 0;
+	while (browse)
+	{
+		if (browse->type == 'C')
+		{
+			canva->map_items[i] = browse;
+			i++;
+		}
+		browse = browse->next;
+	}
+	return (1);
+}

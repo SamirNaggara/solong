@@ -25,18 +25,26 @@ SOURCES	=	./main.c \
 			./$(SOURCE_FOLDER)/parsing/verify_map.c \
 			./$(SOURCE_FOLDER)/parsing/verify_type.c \
 			./$(SOURCE_FOLDER)/minilibx/canva.c \
+			./$(SOURCE_FOLDER)/minilibx/keep_in_map.c \
+			./$(SOURCE_FOLDER)/minilibx/keyboard_actions.c \
+			./$(SOURCE_FOLDER)/minilibx/libx_helper.c \
+			./$(SOURCE_FOLDER)/minilibx/replace_tile.c \
+			./$(SOURCE_FOLDER)/minilibx/sprites.c \
+			./$(SOURCE_FOLDER)/minilibx/stop.c \
 
 OBJETS	=	$(SOURCES:.c=.o)			
 
 
 all		: lib $(NAME)
-	@echo "$(GREEN)Bien compilé !$(RESET)"
+	@echo "$(GREEN)Bien compilé ! Plus qu'a executer ./solong !$(RESET)"
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	@echo "Creation du .o $@"
+	@$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 $(NAME): $(OBJETS)
-	$(CC) $(OBJETS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(MATH_LIB) $(GNL) $(PRINTF) $(LIBFT)
+	@echo "\nCréation de l'executable solong\n"
+	@$(CC) $(OBJETS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(MATH_LIB) $(GNL) $(PRINTF) $(LIBFT)
 
 lib	: 
 	@echo "Je déclenche le Makefile de Libft-plus\n"

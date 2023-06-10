@@ -6,24 +6,24 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 09:05:20 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/07 09:33:49 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:49:44 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../solong.h"
+#include "../../solong.h"
 
 int	ft_verify_map_close(t_canva *canva)
 {
 	t_point	*browse;
 
 	browse = canva->map_first;
-	while(browse->rg)	
+	while (browse->rg)
 	{
 		if (!ft_verify_is_wall(browse))
 			return (0);
 		browse = browse->rg;
 	}
-	while(browse->dw)
+	while (browse->dw)
 	{
 		if (!ft_verify_is_wall(browse))
 			return (0);
@@ -36,13 +36,13 @@ int	ft_verify_map_close(t_canva *canva)
 
 int	ft_verify_map_close2(t_point *browse)
 {
-	while(browse->lf)
+	while (browse->lf)
 	{
 		if (!ft_verify_is_wall(browse))
 			return (0);
 		browse = browse->lf;
 	}
-	while(browse->up)
+	while (browse->up)
 	{
 		if (!ft_verify_is_wall(browse))
 			return (0);
@@ -50,7 +50,6 @@ int	ft_verify_map_close2(t_point *browse)
 	}
 	return (1);
 }
-
 
 int	ft_verify_is_wall(t_point *point)
 {

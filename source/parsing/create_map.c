@@ -6,11 +6,11 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:01:40 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/08 09:22:58 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:44:07 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../solong.h"
+#include "../../solong.h"
 
 int	ft_create_map(t_canva *canva)
 {
@@ -38,22 +38,19 @@ int	ft_create_map(t_canva *canva)
 	ft_add_vertical(canva);
 	return (1);
 }
-
-
 /*
 	On ajoute un point à la fin de la map, ou on le créé si ça existe pas
 */
 
-int		ft_add_point(t_canva *canva, char type)
+int	ft_add_point(t_canva *canva, char type)
 {
-	t_point *point;
+	t_point	*point;
 
 	point = (t_point *)malloc(sizeof(t_point));
 	if (!point)
 		return (0);
 	point->type = type;
 	point->next = NULL;
-
 	if (!canva->map_first)
 	{
 		point->x = 0;
