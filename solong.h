@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:13:46 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 20:23:05 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 21:03:02 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,12 @@
 # define E_NCLOSE "Error\nLa map n'est pas correctement fermée !!!\n"
 # define E_WAYS "Error\nIl n'y a aucun chemin valide, c'est pas sympa pour \
 	le perso !\n"
-# define E_WIN "\nBilal est au calme entouré de chat et de crêpes. Le paradis ! \
-	\n\n"
+# define WIN "\nBilal est au calme entouré de chat et de crêpes. Le paradis ! \
+	\nEt en un nombre impressionnant de mouvements !! %d\n\n"
 # define E_BER "\nError\nOn n'est un peu pointilleux chez nous, les cartes doivent \
 	être en .ber!\n\n"
 # define W_TITLE "Help Bilal to catch the cats and eat the final crepe ! !\n"
+# define NB_MOVE "Nombre de mouvements : %d\n"
 
 typedef struct s_sprite {
 	void	*img;

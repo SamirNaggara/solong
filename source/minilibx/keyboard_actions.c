@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:19:36 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 20:03:42 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/10 21:01:22 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 int	ft_keyboard_action(int keycode, t_canva *canva)
 {
 	canva->nb_move++;
-	if (keycode == 65363)
+	if (keycode == 65363 || keycode == 100)
 		ft_move_right(canva);
-	if (keycode == 65361)
+	if (keycode == 65361 || keycode == 97)
 		ft_move_left(canva);
-	if (keycode == 65362)
+	if (keycode == 65362 || keycode == 119)
 		ft_move_up(canva);
-	if (keycode == 65364)
+	if (keycode == 65364 || keycode == 115)
 		ft_move_down(canva);
 	if (keycode == 65307)
 		ft_stop_program(canva);
 	if (!canva->nb_items && canva->map_player == canva->map_exit)
 	{
-		ft_printf(E_WIN);
+		ft_printf(WIN, canva->nb_move);
 		ft_stop_program(canva);
 	}
+	ft_printf(NB_MOVE, canva->nb_move);
 	ft_keep_player_in_map(canva);
 	return (1);
 }
