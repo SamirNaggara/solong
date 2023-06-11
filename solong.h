@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:13:46 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 21:06:58 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/11 07:36:16 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@
 # define E_ROW "Error\nLe nombre de ligne est-il correcte ?\n"
 # define E_TYPE "Error\nUn caractère étrange s'est glissé dans la map !\n"
 # define E_EXIT "Error\nTrop de sorties, on va pas faire trop facile \
-	non plus !!! \
-	\nAssurez-vous qu'il n'y ai qu'un seul 'E'\n"
+non plus !!! \
+\nAssurez-vous qu'il n'y ai qu'un seul 'E'\n"
 # define E_START "Error\nLe joueur ne peut pas être à plus d'un endroit \
-	à la fois !!! \
-	\nAssurez vous qu'il n'y ai qu'un seul 'P'\n"
+à la fois !!! \
+\nAssurez vous qu'il n'y ai qu'un seul 'P'\n"
 # define E_ITEMS "Error\nSans items à collecter, le jours va s'ennuyer !\n \
-	Ajoutez au moins un objet à collecter dans la map, avec 'C'\n"
+Ajoutez au moins un objet à collecter dans la map, avec 'C'\n"
 # define E_NCLOSE "Error\nLa map n'est pas correctement fermée !!!\n"
 # define E_WAYS "Error\nIl n'y a aucun chemin valide, c'est pas sympa pour \
-	le perso !\n"
+le perso !\n"
 # define WIN "\nBilal est au calme entouré de chat et de crêpes. Le paradis ! \
-	\nEt en un nombre impressionnant de mouvements !! %d\n\n"
+\nEt en un nombre impressionnant de mouvements !! %d\n\n"
 # define E_BER "\nError\nOn n'est un peu pointilleux chez nous, les cartes doivent \
-	être en .ber!\n\n"
+être en .ber!\n\n"
 # define W_TITLE "Help Bilal to catch the cats and eat the final crepe ! !\n"
 # define NB_MOVE "Nombre de mouvements : %d\n"
 

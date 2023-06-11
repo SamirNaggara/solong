@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:23:38 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 19:40:33 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/11 07:37:57 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 int	ft_display_player(t_canva *canva, t_point *tile)
 {
 	if (canva->is_happy)
+	{
 		mlx_put_image_to_window(canva->mlx, canva->window,
 			canva->player_happy.img, 64 * tile->y + canva->x_off,
 			64 * tile->x + canva->y_off);
+		canva->is_happy = 0;
+	}
 	else if (canva->nb_move % 2 == 0)
 		mlx_put_image_to_window(canva->mlx, canva->window,
 			canva->player.img, 64 * tile->y + canva->x_off,
