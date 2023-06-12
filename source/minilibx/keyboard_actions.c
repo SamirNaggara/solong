@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:19:36 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 21:01:22 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/12 11:53:56 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_keyboard_action(int keycode, t_canva *canva)
 {
+	ft_keep_player_in_map(canva);
 	canva->nb_move++;
 	if (keycode == 65363 || keycode == 100)
 		ft_move_right(canva);
@@ -31,7 +32,6 @@ int	ft_keyboard_action(int keycode, t_canva *canva)
 		ft_stop_program(canva);
 	}
 	ft_printf(NB_MOVE, canva->nb_move);
-	ft_keep_player_in_map(canva);
 	return (1);
 }
 
