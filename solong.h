@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:13:46 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/11 07:36:16 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/14 00:07:45 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@
 
 # define E_ROW "Error\nLe nombre de ligne est-il correcte ?\n"
 # define E_TYPE "Error\nUn caractère étrange s'est glissé dans la map !\n"
-# define E_EXIT "Error\nTrop de sorties, on va pas faire trop facile \
-non plus !!! \
+# define E_EXIT "Error\nTrop ou pas assez de sorties, on va pas s'en \
+s'en sortir là !!! \
 \nAssurez-vous qu'il n'y ai qu'un seul 'E'\n"
 # define E_START "Error\nLe joueur ne peut pas être à plus d'un endroit \
 à la fois !!! \
