@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:04:58 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 19:52:16 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/27 23:24:07 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_verify_map(t_canva *canva)
 	if (!ft_verify_auth_char(canva))
 		return (0);
 	if (!ft_verify_one_exit(canva))
+		return (0);
+	if (!ft_verify_one_player(canva))
 		return (0);
 	if (!ft_verify_one_start(canva))
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:19:36 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/12 11:53:56 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/27 23:28:41 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_keyboard_action(int keycode, t_canva *canva)
 }
 
 int	ft_move_down(t_canva *canva)
-{	
+{
 	if (canva->map_player->dw && canva->map_player->dw->type == '1')
 		return (0);
 	ft_replace_by_empty(canva, canva->map_player);
@@ -46,7 +46,7 @@ int	ft_move_down(t_canva *canva)
 }
 
 int	ft_move_up(t_canva *canva)
-{	
+{
 	if (canva->map_player->up && canva->map_player->up->type == '1')
 		return (0);
 	ft_replace_by_empty(canva, canva->map_player);
@@ -56,7 +56,7 @@ int	ft_move_up(t_canva *canva)
 }
 
 int	ft_move_left(t_canva *canva)
-{	
+{
 	if (canva->map_player->lf && canva->map_player->lf->type == '1')
 		return (0);
 	ft_replace_by_empty(canva, canva->map_player);
@@ -66,7 +66,7 @@ int	ft_move_left(t_canva *canva)
 }
 
 int	ft_move_right(t_canva *canva)
-{	
+{
 	if (canva->map_player->rg && canva->map_player->rg->type == '1')
 		return (0);
 	ft_replace_by_empty(canva, canva->map_player);

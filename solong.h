@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:13:46 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/14 00:07:45 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/27 23:26:46 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define E_EXIT "Error\nTrop ou pas assez de sorties, on va pas s'en \
 s'en sortir là !!! \
 \nAssurez-vous qu'il n'y ai qu'un seul 'E'\n"
+# define E_PLAYER "Error\nGalère avec le joueur !\n"
 # define E_START "Error\nLe joueur ne peut pas être à plus d'un endroit \
 à la fois !!! \
 \nAssurez vous qu'il n'y ai qu'un seul 'P'\n"
@@ -144,5 +145,6 @@ int		ft_adjust_screen_y(t_canva *canva);
 int		ft_display_player(t_canva *canva, t_point *tile);
 int		ft_calculate_screen(t_canva *canva);
 int		ft_verify_ber(char *name);
+int		ft_verify_one_player(t_canva *canva);
 
 #endif
