@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:23:38 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/11 07:37:57 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:37:14 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,36 @@ int	ft_create_sprites(t_canva *canva)
 			&(canva->empty.width), &(canva->empty.height));
 	canva->p_exit.img = mlx_xpm_file_to_image(canva->mlx, S_P_EXIT,
 			&(canva->p_exit.width), &(canva->p_exit.height));
+	if (!ft_verify_sprites(canva))
+	{
+		ft_printf(E_SPRITES);
+		return (0);
+	}
+	return (1);
+}
+
+/*
+	Verifie tout les sprites et retourne 0 si un n'a pas fonctionné 
+	normalement
+	1 si tout est bon
+*/
+int	ft_verify_sprites(t_canva *canva)
+{
+	if (!canva->player.img)
+		return (0);
+	if (!canva->player_bis.img)
+		return (0);
+	if (!canva->player_happy.img)
+		return (0);
+	if (!canva->wall.img)
+		return (0);
+	if (!canva->item.img)
+		return (0);
+	if (!canva->exit.img)
+		return (0);
+	if (!canva->empty.img)
+		return (0);
+	if (!canva->p_exit.img)
+		return (0);
 	return (1);
 }

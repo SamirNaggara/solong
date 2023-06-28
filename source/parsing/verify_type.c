@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:17:00 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/27 23:26:21 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:16:15 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int	ft_verify_one_exit(t_canva *canva)
 	}
 	if (nb_exit > 1)
 	{
-		printf(E_EXIT);
+		ft_printf(E_EXIT);
 		return (0);
 	}
 	if (nb_exit == 0)
 	{
-		printf(E_EXIT);
+		ft_printf(E_EXIT);
 		return (0);
 	}
 	return (1);
@@ -52,19 +52,19 @@ int	ft_verify_one_player(t_canva *canva)
 	{
 		if (browse->type == 'P')
 		{
-			canva->map_exit = browse;
+			canva->map_player = browse;
 			nb_player++;
 		}
 		browse = browse->next;
 	}
 	if (nb_player > 1)
 	{
-		printf(E_PLAYER);
+		ft_printf(E_PLAYER);
 		return (0);
 	}
 	if (nb_player == 0)
 	{
-		printf(E_PLAYER);
+		ft_printf(E_PLAYER);
 		return (0);
 	}
 	return (1);
@@ -88,7 +88,7 @@ int	ft_verify_one_start(t_canva *canva)
 	}
 	if (nb_start > 1)
 	{
-		printf(E_START);
+		ft_printf(E_START);
 		return (0);
 	}
 	return (1);

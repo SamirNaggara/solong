@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 09:19:14 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 19:36:16 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:36:58 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int	ft_make_canva(t_canva *canva)
 	canva->window = mlx_new_window(canva->mlx, WINDOW_X_SIZE,
 			WINDOW_Y_SIZE, W_TITLE);
 	mlx_do_key_autorepeaton(canva->mlx);
-	ft_create_sprites(canva);
+	if (!ft_create_sprites(canva))
+	{
+		ft_stop_program(canva);
+		return (0);
+	}
 	ft_create_maze(canva);
 	mlx_key_hook(canva->window, ft_keyboard_action, canva);
 	mlx_hook(canva->window, 17, 0, ft_stop_program, canva);

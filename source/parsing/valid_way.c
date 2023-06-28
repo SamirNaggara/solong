@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 09:28:26 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 19:48:29 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:39:23 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_valid_way(t_canva *canva, t_point *a, t_point *b)
 	}
 	if (!ft_check_ways(canva, a, b))
 	{
-		printf(E_WAYS);
-		printf("Case %d %d inaccesible depuis %d %d\n", b->x, b->y, a->x, a->y);
+		ft_printf(E_WAYS);
+		ft_printf(E_ACCESSIBILITY, b->x, b->y, a->x, a->y);
 		return (0);
 	}
 	return (1);
