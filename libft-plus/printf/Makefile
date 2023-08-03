@@ -1,6 +1,6 @@
 NAME	=	libftprintf.a
 LIBS	=	srcs/libft.a
-FLAGS	= -Wall -Wextra -Werror		
+FLAGS	= -Wall -Wextra -Werror	-fPIE	
 
 
 SOURCES	=	./ft_printf.c \

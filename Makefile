@@ -5,12 +5,13 @@ LIB_PATH		=	libft-plus
 LIBFT 			= 	$(LIB_PATH)/libft.a
 PRINTF			=	$(LIB_PATH)/printf.a 
 GNL				=	$(LIB_PATH)/gnl.a 
-CC	=	gcc $(FLAGS)
-RM	=	rm -f	
-FLAGS		= 	-Wall -Wextra -Werror -g	
-GREEN		= 	\033[0;32m
-BIG		= 	\033[0;1m
-RESET		= 	\033[0m
+CC				=	gcc $(FLAGS)
+RM				=	rm -f	
+MLX				= 	mlx_linux/libmlx.a
+FLAGS			= 	-Wall -Wextra -Werror -g	
+GREEN			= 	\033[0;32m
+BIG				= 	\033[0;1m
+RESET			= 	\033[0m
 
 
 
@@ -35,16 +36,19 @@ SOURCES	=	./main.c \
 OBJETS	=	$(SOURCES:.c=.o)			
 
 
-all		: lib $(NAME)
+all		:  lib $(NAME)
 	@echo "$(GREEN)Bien compilé ! Plus qu'a executer ./solong !$(RESET)"
+
+$(MLX):
+	make -C minilibx-linux
 
 %.o: %.c
 	@echo "Creation du .o $@"
 	@$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
-$(NAME): $(OBJETS)
+$(NAME): $(MLX) $(OBJETS)
 	@echo "\nCréation de l'executable solong\n"
-	@$(CC) $(OBJETS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(MATH_LIB) $(GNL) $(PRINTF) $(LIBFT)
+	@$(CC) $(OBJETS) -Lmlx_linux -lmlx -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(MATH_LIB) $(GNL) $(PRINTF) $(LIBFT)
 
 lib	: 
 	@echo "Je déclenche le Makefile de Libft-plus\n"
