@@ -40,7 +40,7 @@ all		:  lib $(NAME)
 	@echo "$(GREEN)Bien compilé ! Plus qu'a executer ./solong !$(RESET)"
 
 $(MLX):
-	make -C minilibx-linux
+	make -C mlx_linux
 
 %.o: %.c
 	@echo "Creation du .o $@"
