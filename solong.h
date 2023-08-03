@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:13:46 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/28 12:38:53 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:52:36 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ Ajoutez au moins un objet à collecter dans la map, avec 'C'\n"
 # define E_WAYS "Error\nIl n'y a aucun chemin valide, c'est pas sympa pour \
 le perso !\n"
 # define E_SPRITES "Error\nErreur lors du chargement des sprites\n"
+# define E_MAP "Error\nMap is empty or was not properly open\n"
 # define WIN "\nBilal est au calme entouré de chat et de crêpes. Le paradis ! \
 \nEt en un nombre impressionnant de mouvements !! %d\n\n"
 # define E_BER "\nError\nOn n'est un peu pointilleux chez nous, les cartes doivent \
@@ -149,4 +150,6 @@ int		ft_calculate_screen(t_canva *canva);
 int		ft_verify_ber(char *name);
 int		ft_verify_one_player(t_canva *canva);
 int		ft_verify_sprites(t_canva *canva);
+int		ft_map_not_open(void);
+
 #endif

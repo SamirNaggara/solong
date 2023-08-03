@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:01:40 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 19:44:07 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:50:57 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_create_map(t_canva *canva)
 
 	fd = open(canva->map_name, O_RDONLY);
 	if (!fd)
-		return (0);
+		return (ft_map_not_open());
 	line = get_next_line(fd);
 	if (!line)
-		return (0);
+		return (ft_map_not_open());
 	canva->ll = (int)ft_strlen(line) - 1;
 	if (canva->ll == 0)
 		return (0);
@@ -37,6 +37,12 @@ int	ft_create_map(t_canva *canva)
 	ft_add_horizontal(canva);
 	ft_add_vertical(canva);
 	return (1);
+}
+
+int	ft_map_not_open(void)
+{
+	ft_printf(E_MAP);
+	return (0);
 }
 /*
 	On ajoute un point à la fin de la map, ou on le créé si ça existe pas

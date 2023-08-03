@@ -6,7 +6,7 @@
 /*   By: snaggara <snaggara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:01:11 by snaggara          #+#    #+#             */
-/*   Updated: 2023/06/10 20:21:43 by snaggara         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:43:35 by snaggara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_init(t_canva *canva, int ac, char **av)
 		canva->map_name = av[1];
 	}
 	else
-		canva->map_name = "basic.ber";
+		canva->map_name = "map/basic.ber";
 	canva->map_first = (t_point *)0;
 	canva->map_end = (t_point *)0;
 	canva->nb_l = 0;
